@@ -14,6 +14,8 @@
 		77D20A0C1F68999A0082CD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D20A0A1F68999A0082CD1B /* LaunchScreen.storyboard */; };
 		77D20A171F68999B0082CD1B /* iOS_BucketListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D20A161F68999B0082CD1B /* iOS_BucketListTests.swift */; };
 		77D20A221F68999B0082CD1B /* iOS_BucketListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D20A211F68999B0082CD1B /* iOS_BucketListUITests.swift */; };
+		77F41ED91F68A25400000508 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F41ED81F68A25400000508 /* AddItemViewController.swift */; };
+		77F41EDB1F68A26800000508 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F41EDA1F68A26800000508 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		77D20A1D1F68999B0082CD1B /* iOS BucketListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS BucketListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D20A211F68999B0082CD1B /* iOS_BucketListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BucketListUITests.swift; sourceTree = "<group>"; };
 		77D20A231F68999B0082CD1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F41ED81F68A25400000508 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		77F41EDA1F68A26800000508 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				77D20A081F68999A0082CD1B /* Assets.xcassets */,
 				77D20A0A1F68999A0082CD1B /* LaunchScreen.storyboard */,
 				77D20A0D1F68999A0082CD1B /* Info.plist */,
+				77F41ED81F68A25400000508 /* AddItemViewController.swift */,
+				77F41EDA1F68A26800000508 /* Item.swift */,
 			);
 			path = "iOS BucketList";
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F41EDB1F68A26800000508 /* Item.swift in Sources */,
 				77D20A041F68999A0082CD1B /* ViewController.swift in Sources */,
 				77D20A021F68999A0082CD1B /* AppDelegate.swift in Sources */,
+				77F41ED91F68A25400000508 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +513,7 @@
 				77D20A281F68999B0082CD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77D20A291F68999B0082CD1B /* Build configuration list for PBXNativeTarget "iOS BucketListTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				77D20A2B1F68999B0082CD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77D20A2C1F68999B0082CD1B /* Build configuration list for PBXNativeTarget "iOS BucketListUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				77D20A2E1F68999B0082CD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
