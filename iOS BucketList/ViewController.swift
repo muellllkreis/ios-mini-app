@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let bucketList = ["Get groceries", "Build iOS App", "Attend Football Game"]
+    var bucketList = Item.createBucketList()
+    
+    //let bucketList = ["Get groceries", "Build iOS App", "Attend Football Game"]
     let textCellIdentifier = "TextCell"
     
     
@@ -37,10 +39,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = bucketList[row]
+        cell.textLabel?.text = bucketList[row].title
+        
+        //dueLabel.text = formatter.string(from: bucketList[row].duedate)
+        
         
         return cell
     }
@@ -48,11 +56,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = indexPath.row
-        print(bucketList[row])
+        print(bucketList[row].title)
         
     }
     
     @IBOutlet weak var tableView: UITableView!
-
 }
 
