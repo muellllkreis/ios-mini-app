@@ -165,9 +165,8 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKA-UY-9p9" userLabel="Description Field">
-                                <rect key="frame" x="16" y="296" width="337" height="30"/>
+                                <rect key="frame" x="16" y="296" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="337" id="PaK-gL-dNa"/>
                                     <constraint firstAttribute="height" constant="30" id="PvO-ju-0ke"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -219,7 +218,7 @@
                     <navigationItem key="navigationItem" id="j5D-Gj-jwJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6yc-6z-dW9">
                             <connections>
-                                <action selector="Finish:" destination="Cil-zF-oQO" id="Zy2-K7-bI0"/>
+                                <action selector="Finish:" destination="Cil-zF-oQO" id="SCG-Jj-jXV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z5n-Bv-RBV"/>
