@@ -74,7 +74,7 @@
         <!--Add Item View Controller-->
         <scene sceneID="9LJ-qh-l0h">
             <objects>
-                <viewController id="Cil-zF-oQO" customClass="AddItemViewController" sceneMemberID="viewController">
+                <viewController id="Cil-zF-oQO" customClass="AddItemViewController" customModule="iOS_BucketList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ezi-Uh-ihp"/>
                         <viewControllerLayoutGuide type="bottom" id="mBu-t4-nkx"/>
@@ -216,7 +216,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j5D-Gj-jwJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6yc-6z-dW9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6yc-6z-dW9">
+                            <connections>
+                                <action selector="Cancel:" destination="Cil-zF-oQO" id="Bdn-ek-22I"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z5n-Bv-RBV"/>
                     </navigationItem>
                 </viewController>
