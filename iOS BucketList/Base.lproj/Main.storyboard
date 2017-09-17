@@ -216,11 +216,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j5D-Gj-jwJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6yc-6z-dW9">
-                            <connections>
-                                <action selector="Finish:" destination="Cil-zF-oQO" id="SCG-Jj-jXV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6yc-6z-dW9"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z5n-Bv-RBV"/>
                     </navigationItem>
                 </viewController>

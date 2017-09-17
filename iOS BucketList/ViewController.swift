@@ -11,23 +11,17 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var bucketList = Item.createBucketList()
-    
-    //let bucketList = ["Get groceries", "Build iOS App", "Attend Football Game"]
     let textCellIdentifier = "TextCell"
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.title = "UVa Bucket List"
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,9 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let row = indexPath.row
         cell.textLabel?.text = bucketList[row].title
         
-        //dueLabel.text = formatter.string(from: bucketList[row].duedate)
-        
-        
+    
         return cell
     }
 
@@ -57,7 +49,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let row = indexPath.row
         print(bucketList[row].title)
-        
     }
     
     @IBOutlet weak var tableView: UITableView!
