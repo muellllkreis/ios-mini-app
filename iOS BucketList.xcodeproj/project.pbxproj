@@ -103,11 +103,11 @@
 			children = (
 				77D20A011F68999A0082CD1B /* AppDelegate.swift */,
 				77D20A031F68999A0082CD1B /* ViewController.swift */,
+				77F41ED81F68A25400000508 /* AddItemViewController.swift */,
 				77D20A051F68999A0082CD1B /* Main.storyboard */,
 				77D20A081F68999A0082CD1B /* Assets.xcassets */,
 				77D20A0A1F68999A0082CD1B /* LaunchScreen.storyboard */,
 				77D20A0D1F68999A0082CD1B /* Info.plist */,
-				77F41ED81F68A25400000508 /* AddItemViewController.swift */,
 				77F41EDA1F68A26800000508 /* Item.swift */,
 			);
 			path = "iOS BucketList";

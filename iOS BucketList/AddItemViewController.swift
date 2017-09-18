@@ -11,4 +11,19 @@ import UIKit
 
 class AddItemViewController: UIViewController {
     
+    
+    @IBAction func Cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func Save(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        }
 }
