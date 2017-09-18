@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         self.title = "UVa Bucket List"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,17 +40,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
+        //let date = formatter.string(from: bucketList[row].duedate)
         cell.textLabel?.text = bucketList[row].title
+        let lbl = cell.contentView.viewWithTag(2) as! UILabel
+        let date = RDate(before: 30)
+        lbl.text = formatter.string(for: date)
         
-    
         return cell
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let row = indexPath.row
-        print(bucketList[row].title)
+    
+    func RDate(before: Int)-> Date?{
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 9
+        let random_seed = arc4random_uniform(UInt32(before))
+        dateComponents.day = Int(random_seed)
+  
+        let curcal = Calendar.current
+        let date = curcal.date(from: dateComponents)
+        return date
     }
+
     
     @IBOutlet weak var tableView: UITableView!
 }
