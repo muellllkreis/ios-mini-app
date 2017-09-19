@@ -10,12 +10,12 @@ import Foundation
 
 class Item {
     
-    let title: String
-    let description: String
-    let longitude: Double
-    let latitude: Double
-    let duedate: Date
-    let finished: Bool
+    var title: String
+    var description: String
+    var longitude: Double
+    var latitude: Double
+    var duedate: Date
+    var finished: Bool
     
     // Position in the table
     let horizPos: Int
@@ -39,7 +39,7 @@ class Item {
         self.description = ""
         self.longitude = 0.0
         self.latitude = 0.0
-        self.duedate = Date()
+        self.duedate = Item.RDate(before: 30)!
         self.finished = false
         self.horizPos = 0
         self.vertPos = 0
@@ -53,4 +53,15 @@ class Item {
         return bucketlist
     }
     
+    static func RDate(before: Int)-> Date?{
+        var dateComponents = DateComponents()
+        dateComponents.year = 2017
+        dateComponents.month = 9
+        let random_seed = arc4random_uniform(UInt32(before))
+        dateComponents.day = Int(random_seed)
+        
+        let curcal = Calendar.current
+        let date = curcal.date(from: dateComponents)
+        return date
+    }
 }
