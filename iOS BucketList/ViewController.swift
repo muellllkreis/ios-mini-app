@@ -19,14 +19,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.bucketList.sort{
-            if $0.finished != $1.finished {
-                return false
-            }
-            else {
-                return $0.duedate < $1.duedate
-            }
-        }
+        self.bucketList = Item.DoubleSort(list: bucketList)
+        
+        //self.bucketList.sort{
+        //    if $0.finished != $1.finished {
+        //        return false
+        //    }
+        //    else {
+        //        return $0.duedate < $1.duedate
+        //    }
+        //}
 
     }
 
@@ -69,7 +71,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //    let date = curcal.date(from: dateComponents)
     //    return date
     //}
-
     
     @IBOutlet weak var tableView: UITableView!
 }

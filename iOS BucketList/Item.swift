@@ -64,4 +64,15 @@ class Item {
         let date = curcal.date(from: dateComponents)
         return date
     }
+    
+    static func DoubleSort(list: Array<Item>) -> Array<Item> {
+        return list.sorted{
+            if $0.finished != $1.finished {
+                return false
+            }
+            else {
+                return $0.duedate < $1.duedate
+            }
+        }
+    }
 }

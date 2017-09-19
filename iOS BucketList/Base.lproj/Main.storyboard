@@ -225,7 +225,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z5n-Bv-RBV">
                             <connections>
-                                <action selector="Save:" destination="Cil-zF-oQO" id="S5J-MF-TQK"/>
+                                <action selector="Save:" destination="Cil-zF-oQO" id="ynF-LU-avX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

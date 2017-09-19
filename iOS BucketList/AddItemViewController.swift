@@ -26,9 +26,42 @@ class AddItemViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+
     @IBAction func Save(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        
+        let newitem = Item(title: nameField.text!, description: descriptionField.text!, longitude: Double(longitudeField.text!)!, latitude: Double(latitudeField.text!)!, duedate: dateField.date, finished: false)
+        
+        let i = navigationController?.viewControllers.index(of: self)
+        let targetController = navigationController?.viewControllers[i!-1] as! ViewController
+        
+        targetController.bucketList.append(newitem)
+        targetController.bucketList = Item.DoubleSort(list: targetController.bucketList)
+        for i in targetController.bucketList {
+            print(i.title)
+        }
+        _ = self.navigationController?.popViewController(animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let newitem = Item(title: nameField.text!, description: descriptionField.text!, longitude: Double(longitudeField.text!)!, latitude: Double(latitudeField.text!)!, duedate: dateField.date, finished: false)
+        
+        if(segue.identifier == "SaveSegue") {
+            //let destinationVC = segue.destination as! UINavigationController
+            //let targetController = destinationVC.topViewController as! ViewController
+            
+            let i = navigationController?.viewControllers.index(of: self)
+            let targetController = navigationController?.viewControllers[i!-1] as! ViewController
+            
+            targetController.bucketList.append(newitem)
+            targetController.bucketList = Item.DoubleSort(list: targetController.bucketList)
+            targetController.tableView.numberOfRows(inSection: targetController.bucketList.count)
+            for i in targetController.bucketList {
+                print(i.title)
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
