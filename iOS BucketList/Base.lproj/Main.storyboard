@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TIW-PT-3qm">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TIW-PT-3qm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -225,12 +225,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z5n-Bv-RBV">
                             <connections>
-                                <action selector="Save:" destination="Cil-zF-oQO" id="S5J-MF-TQK"/>
+                                <action selector="Save:" destination="Cil-zF-oQO" id="ynF-LU-avX"/>
+                                <segue destination="qfm-ic-5r3" kind="unwind" unwindAction="saveNewItemUnwindWithSegue:" id="uYj-hD-0NK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateField" destination="CA3-Bt-zNN" id="yCI-3i-1h9"/>
+                        <outlet property="descriptionField" destination="pKA-UY-9p9" id="AXk-tU-Mm0"/>
+                        <outlet property="latitudeField" destination="bzH-L6-ZWx" id="GdD-GT-hd4"/>
+                        <outlet property="longitudeField" destination="G0Q-XA-i8n" id="s78-Ky-yQ0"/>
+                        <outlet property="nameField" destination="Wp0-UF-Zaj" id="PpI-ni-r6l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXh-fs-R9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qfm-ic-5r3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2608.8000000000002" y="122.78860569715144"/>
         </scene>

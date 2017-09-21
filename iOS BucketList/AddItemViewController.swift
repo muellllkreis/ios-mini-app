@@ -11,14 +11,26 @@ import UIKit
 
 class AddItemViewController: UIViewController {
     
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var longitudeField: UITextField!
+
+    @IBOutlet weak var latitudeField: UITextField!
+    
+    @IBOutlet weak var descriptionField: UITextField!
+    
+    @IBOutlet weak var dateField: UIDatePicker!
+    
     
     @IBAction func Cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
+
     @IBAction func Save(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
