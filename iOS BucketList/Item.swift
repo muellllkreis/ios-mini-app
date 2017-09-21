@@ -66,13 +66,11 @@ class Item {
     }
     
     static func DoubleSort(list: Array<Item>) -> Array<Item> {
-        return list.sorted{
-            if $0.finished != $1.finished {
-                return false
+        return list.sorted{ t1, t2 in
+            if t1.finished == t2.finished {
+                return t1.duedate < t2.duedate
             }
-            else {
-                return $0.duedate < $1.duedate
-            }
+            return !t1.finished && t2.finished
         }
     }
 }

@@ -57,6 +57,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let date = bucketList[row].duedate
         lbl.text = formatter.string(for: date)
         
+        if(bucketList[row].finished) {
+            cell.backgroundColor = UIColor.lightGray
+        }
+        else {
+            cell.backgroundColor = UIColor.clear
+        }
+        
         return cell
     }
     
@@ -73,5 +80,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //}
     
     @IBOutlet weak var tableView: UITableView!
-}
+    
+    @IBAction func saveNewItemUnwind(segue: UIStoryboardSegue) {
+        if let sourceVC = segue.source as? AddItemViewController,
+            let title = sourceVC.nameField.text,
+            let description = sourceVC.descriptionField.text,
+            let longitude = Double(sourceVC.longitudeField.text!),
+            let latitude = Double(sourceVC.latitudeField.text!),
+            let duedate = sourceVC.dateField.date as? Date {
+            
+            let newitem = Item(title: title, description: description, longitude: longitude, latitude: latitude, duedate: duedate, finished: false)
+            
+            self.bucketList.append(newitem)
+            self.bucketList = Item.DoubleSort(list: self.bucketList)
+            tableView.reloadData()
+        }
+    }
+    
+    // Lets you add various buttons when you swipe
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
+            //let cell = tableView.dequeueReusableCell(withIdentifier: self.textCellIdentifier, for: index)
+            //let cell = tableView.cellForRow(at: editActionsForRowAt.row)!// as! UITableViewCell
+            let cell = tableView.cellForRow(at: editActionsForRowAt)!
+            if(self.bucketList[index.row].finished) {
+                self.bucketList[index.row].finished = false
+                cell.setSelected(false, animated: true)
+                //print(self.bucketList[index.row].title)
+                //print(self.bucketList[index.row].finished)
+            }
+            else {
+                self.bucketList[index.row].finished = true
+                cell.selectionStyle = .blue
+                cell.textLabel?.text = "LOL"
+                cell.setSelected(true, animated: true)
+                print(self.bucketList[index.row].title)
+                print(self.bucketList[index.row].finished)
+            }
+            self.bucketList = Item.DoubleSort(list: self.bucketList)
+            tableView.reloadData()
+        }
+        done.backgroundColor = .green
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            
+            
+        }
+        edit.backgroundColor = .orange
+        
+        
+        return [done, edit]
+    }}
 
