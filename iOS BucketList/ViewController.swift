@@ -97,6 +97,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Edit_Item"{
+        if let controller = segue.destination as? UINavigationController {
+        if let nextView = controller.topViewController as? EditItemViewController {
+        print("test")
+        let ip = sender as! IndexPath
+            print(ip.row)
+        nextView.name = self.bucketList[ip.row].title
+        nextView.lat = self.bucketList[ip.row].latitude
+        nextView.long = self.bucketList[ip.row].longitude
+        nextView.desc = self.bucketList[ip.row].title
+        nextView.date = self.bucketList[ip.row].duedate
+        print(self.bucketList[ip.row].title)
+            
+         }
+        }
+        }
+    }
+    
     // Lets you add various buttons when you swipe
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
@@ -123,8 +142,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         done.backgroundColor = .green
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            
-            
+                    self.performSegue(withIdentifier: "Edit_Item", sender: index)
         }
         edit.backgroundColor = .orange
         
