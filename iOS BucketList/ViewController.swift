@@ -97,6 +97,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func saveNewEditItemUnwind(segue: UIStoryboardSegue) {
+        if let sourceVC = segue.source as? EditItemViewController,
+            let title = sourceVC.NameField.text,
+            let description = sourceVC.DescriptionField.text,
+            let longitude = Double(sourceVC.LongitudeField.text!),
+            let latitude = Double(sourceVC.LatitudeField.text!),
+            let duedate = sourceVC.DueDate.date as? Date {
+            
+            self.bucketList.remove(at: sourceVC.path)
+            let newitem = Item(title: title, description: description, longitude: longitude, latitude: latitude, duedate: duedate, finished: false)
+            
+            self.bucketList.append(newitem)
+            self.bucketList = Item.DoubleSort(list: self.bucketList)
+            tableView.reloadData()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Edit_Item"{
         if let controller = segue.destination as? UINavigationController {
@@ -104,11 +121,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("test")
         let ip = sender as! IndexPath
             print(ip.row)
+            print(ip.section)
         nextView.name = self.bucketList[ip.row].title
         nextView.lat = self.bucketList[ip.row].latitude
         nextView.long = self.bucketList[ip.row].longitude
         nextView.desc = self.bucketList[ip.row].title
         nextView.date = self.bucketList[ip.row].duedate
+        nextView.path = ip.row
         print(self.bucketList[ip.row].title)
             
          }

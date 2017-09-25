@@ -10,6 +10,7 @@ import UIKit
 
 class EditItemViewController: UIViewController {
     
+    var path = 0
     var name = ""
     var desc = ""
     var lat = 0.0
