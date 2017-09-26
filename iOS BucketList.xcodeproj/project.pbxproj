@@ -16,6 +16,7 @@
 		77D20A221F68999B0082CD1B /* iOS_BucketListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D20A211F68999B0082CD1B /* iOS_BucketListUITests.swift */; };
 		77F41ED91F68A25400000508 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F41ED81F68A25400000508 /* AddItemViewController.swift */; };
 		77F41EDB1F68A26800000508 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F41EDA1F68A26800000508 /* Item.swift */; };
+		DE7A66AF1F78245800111B4D /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A66AE1F78245800111B4D /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		77D20A231F68999B0082CD1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F41ED81F68A25400000508 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		77F41EDA1F68A26800000508 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DE7A66AE1F78245800111B4D /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				77D20A011F68999A0082CD1B /* AppDelegate.swift */,
+				DE7A66AE1F78245800111B4D /* EditItemViewController.swift */,
 				77D20A031F68999A0082CD1B /* ViewController.swift */,
 				77F41ED81F68A25400000508 /* AddItemViewController.swift */,
 				77D20A051F68999A0082CD1B /* Main.storyboard */,
@@ -267,6 +270,7 @@
 			files = (
 				77F41EDB1F68A26800000508 /* Item.swift in Sources */,
 				77D20A041F68999A0082CD1B /* ViewController.swift in Sources */,
+				DE7A66AF1F78245800111B4D /* EditItemViewController.swift in Sources */,
 				77D20A021F68999A0082CD1B /* AppDelegate.swift in Sources */,
 				77F41ED91F68A25400000508 /* AddItemViewController.swift in Sources */,
 			);
