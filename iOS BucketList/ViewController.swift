@@ -101,12 +101,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let sourceVC = segue.source as? EditItemViewController,
             let title = sourceVC.NameField.text,
             let description = sourceVC.DescriptionField.text,
+            let finis = self.bucketList[sourceVC.path].finished as? Bool,
             let longitude = Double(sourceVC.LongitudeField.text!),
             let latitude = Double(sourceVC.LatitudeField.text!),
             let duedate = sourceVC.DueDate.date as? Date {
             
             self.bucketList.remove(at: sourceVC.path)
-            let newitem = Item(title: title, description: description, longitude: longitude, latitude: latitude, duedate: duedate, finished: false)
+            let newitem = Item(title: title, description: description, longitude: longitude, latitude: latitude, duedate: duedate, finished: finis)
             
             self.bucketList.append(newitem)
             self.bucketList = Item.DoubleSort(list: self.bucketList)
@@ -125,7 +126,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         nextView.name = self.bucketList[ip.row].title
         nextView.lat = self.bucketList[ip.row].latitude
         nextView.long = self.bucketList[ip.row].longitude
-        nextView.desc = self.bucketList[ip.row].title
+        nextView.desc = self.bucketList[ip.row].description
         nextView.date = self.bucketList[ip.row].duedate
         nextView.path = ip.row
         print(self.bucketList[ip.row].title)
