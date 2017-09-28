@@ -22,7 +22,7 @@ iOS Bucketlist
 *No additional information is needed to run the app.*
 
 ### Lessons learned
-It is probably the most interesting to compare what we learned making this mini app to our lessons learned from the previous Android bucket list project we did: 
+It is probably most interesting to compare what we learned making this mini app to our lessons learned from the previous Android bucket list project we did: 
 
 In our Android project report, we stated that the major lessons learned included working with git as a team and learning to work with a new IDE (Android Studio). The programming language itself (Java), though, did not present us with a particular challenge. However, with the iOS project, things were a little different since neither of us had a lot of experience with programming in Swift before. Hence, getting the basic set up of classes and the tableview done was not as trivial as it was in Java. The same goes for the sorting function, which was straight-forward to set up in Java but considerably harder in Swift.
 
